@@ -1,0 +1,22 @@
+รายละเอียดงานงาน network lab :: socket programming
+
+สมาชิก : group 1 
+    5931078321
+    6030575121
+    6030124821
+    6031031221
+
+ภาษา : javascript ใช้ npm package express, ejs, socket.io, nodemon
+
+โปรแกรม : 2D chat
+    - Chat แบบเดินไปมาได้ ข้อความแสดงเฉพาะข้อความล่าสุดของแต่ละคน
+    - Client เปิดเว็บ จะมีการสร้าง socket connection ใหม่
+    - Server เป็น stateful เก็บ state ปัจจุบันของ client แต่ละคน (ตำแหน่ง ข้อความ สี ตาม socket id ที่สร้าง)
+    - Client เคลื่อนที่ด้วย keyboard และส่ง message ผ่าน input (ในโทรศัพท์จะเคลื่อนที่ไม่ได้เพราะไม่มี keyboard) ทุกครั้งที่ client มี action จะส่ง event ไปที่ server เพื่อให้ server broadcast event นั้นไปที่ client ทั้งหมด
+    - เมื่อ client ปิดโปรแกรมจะทำการลบ state ของ client คนนั้นออกตาม socket id
+    - ข้อจำกัดคือรับ client ได้มากสุด 10000 คนเพราะจะไม่มีตำแหน่งให้ลงได้ แต่ไม่ได้แก้ปัญหานี้เพราะคิดว่าไม่จำเป็นกับจุดประสงค์ของงานนี้
+
+วิธีการใช้งาน
+    - npm install ใน root ของ folder
+    - เปิด server ด้วยคำสั่ง nodemon หรือ node server.js ที่ root ของ folder (เปิดแบบ localhost port 3000)
+    - Client ใช้งานที่ localhost:3000
